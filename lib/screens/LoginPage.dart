@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
 
   Future<String> _signUpUser(SignupData data) async {
     return 'To be implemented';
-  } // _signUpUser
+  } // _signUpUseraaaaa
 
   Future<String> _recoverPassword(String email) async {
     return 'Recover password functionality needs to be implemented';
