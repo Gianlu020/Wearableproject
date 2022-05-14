@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
   //commento prova branch
 
   Future<String> _signUpUser(SignupData data) async {
-    return 'To be implemented!!!!!!!';
+    return 'To be implemented';
   } // _signUpUser
 
   Future<String> _recoverPassword(String email) async {
