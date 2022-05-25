@@ -4,13 +4,20 @@ import 'package:wearable_project/screens/LoginPage.dart';
 import 'package:wearable_project/screens/PassiPage.dart';
 import 'package:wearable_project/screens/CuorePage.dart';
 import 'package:wearable_project/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:fitbitter/fitbitter.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
   static const route = '/home/';
   static const routename = 'HomePage';
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     print('${HomePage.routename} built');
@@ -18,7 +25,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Luca&Gianlu'),
+        title: Text('Luca&Gianlu&Giorgia'),
       ),
       body: Center(
         child:
@@ -63,7 +70,19 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.green,
               ),
-              child: Text('Luca&Gianlu'),
+              child: Text('Luca&Gianlu&Giorgia'),
+            ),
+            ListTile(
+                leading: const Icon(Icons.manage_accounts_outlined),
+                title: const Text('Authorization'),
+                onTap: () async{
+                 String? userId = await FitbitConnector.authorize(
+                      context: context,
+                      clientID: '238C6C',
+                      clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
+                      redirectUri: 'example://fitbit/auth',
+                      callbackUrlScheme: 'example');
+                },
             ),
             ListTile(
                 leading: const Icon(Icons.logout),
@@ -77,21 +96,14 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
-  } //build
-
-  void _toLoginPage(BuildContext context) {
+  } 
+ //build
+  void _toLoginPage(BuildContext context) async {
+    //Unset the 'username' filed in SharedPreference 
+    final sp = await SharedPreferences.getInstance();
+    sp.remove('username');
     //Pop the drawer first
     Navigator.pop(context);
     //Then pop the HomePage
     Navigator.of(context).pushReplacementNamed('LoginPage');
-  } //_toCalendarPage
-
-  /// void _toLoginPage(BuildContext context) {
-  //Pop the drawer first
-  //Navigator.pop(context);
-  // Navigator.pop(context);
-  //Then pop the HomePage
-  ////Navigator.of(context).pushReplacementNamed(LoginPage.routename);
-  //} //_toCalendarPage///
-
-} //HomePage
+  } } //HomePage
