@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wearable_project/screens/HomePage.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:fitbitter/fitbitter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -35,6 +36,12 @@ class _LoginPageState extends State<LoginPage> {
 
       final sp = await SharedPreferences.getInstance();
       sp.setString('username', data.name);
+      String? userId = await FitbitConnector.authorize(
+                      context: context,
+                      clientID: '238C6C',
+                      clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
+                      redirectUri: 'example://fitbit/auth',
+                      callbackUrlScheme: 'example');
 
       return '';
     } else {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:wearable_project/screens/LoginPage.dart';
 import 'package:wearable_project/screens/PassiPage.dart';
-import 'package:wearable_project/screens/CuorePage.dart';
+import 'package:wearable_project/screens/AttivityPage.dart';
 import 'package:wearable_project/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fitbitter/fitbitter.dart';
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Luca&Gianlu&Giorgia'),
+        title: Text('App Sport'),
       ),
       body: Center(
         child:
@@ -53,9 +53,9 @@ class _HomePageState extends State<HomePage> {
           //),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'CuorePage');
+              Navigator.pushNamed(context, 'AttivityPage');
             },
-            child: const Text('Battiti'),
+            child: const Text('Attività'),
             style: ElevatedButton.styleFrom(
                 primary: Colors.green,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
@@ -70,19 +70,7 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 color: Colors.green,
               ),
-              child: Text('Luca&Gianlu&Giorgia'),
-            ),
-            ListTile(
-                leading: const Icon(Icons.manage_accounts_outlined),
-                title: const Text('Authorization'),
-                onTap: () async{
-                 String? userId = await FitbitConnector.authorize(
-                      context: context,
-                      clientID: '238C6C',
-                      clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
-                      redirectUri: 'example://fitbit/auth',
-                      callbackUrlScheme: 'example');
-                },
+              child: Text('App Sport'),
             ),
             ListTile(
                 leading: const Icon(Icons.logout),

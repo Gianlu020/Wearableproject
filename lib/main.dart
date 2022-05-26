@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wearable_project/screens/HomePage.dart';
 import 'package:wearable_project/screens/LoginPage.dart';
 import 'package:wearable_project/screens/PassiPage.dart';
-import 'package:wearable_project/screens/CuorePage.dart';
-//TODO: import the homepage widget
+import 'package:wearable_project/screens/AttivityPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         'LoginPage': (context) => LoginPage(),
         'HomePage': (context) => HomePage(),
         'PassiPage': (context) => PassiPage(),
-        'CuorePage': (context) => CuorePage(),
+        'AttivityPage': (context) => AttivityPage(),
       },
     );
   } //build

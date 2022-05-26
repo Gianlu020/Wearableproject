@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 //import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class CuorePage extends StatelessWidget {
-  CuorePage({Key? key}) : super(key: key);
+class AttivityPage extends StatelessWidget {
+  AttivityPage({Key? key}) : super(key: key);
 
   static const route = '/';
-  static const routename = 'CuorePage';
+  static const routename = 'AttivityPage';
 
   @override
   Widget build(BuildContext context) {
-    print('${CuorePage.routename} built');
+    print('${AttivityPage.routename} built');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Battiti'),
+        title: const Text('Attività'),
         backgroundColor: Colors.green,
       ),
       body: Center(
