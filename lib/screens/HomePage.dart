@@ -6,6 +6,7 @@ import 'package:wearable_project/screens/AttivityPage.dart';
 import 'package:wearable_project/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fitbitter/fitbitter.dart';
+import 'package:wearable_project/screens/BMI/BMIpage.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -29,13 +30,11 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child:
-            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          //Row(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //children: [
+            Column(mainAxisAlignment: MainAxisAlignment.start, children: [
           SizedBox(
             child: Text('Hello : $message'),
           ),
+          SizedBox(height: 300,width: 300,child: Image.asset('assets/images/corsa.jpg',),),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, 'PassiPage');
@@ -45,17 +44,21 @@ class _HomePageState extends State<HomePage> {
                 primary: Colors.green,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           ),
-          //],
-          // ),
-          //SizedBox(
-          // width: 30,
-          //  height: 30,
-          //),
+          SizedBox(height: 50,width: 60),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, 'AttivityPage');
             },
             child: const Text('Attività'),
+            style: ElevatedButton.styleFrom(
+                primary: Colors.green,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
+          ),
+           SizedBox(height: 50,width: 60),
+           ElevatedButton(onPressed: (){
+                  Navigator.pushNamed(context, 'BMIPage');
+                }, 
+            child: const Text('BMI'),
             style: ElevatedButton.styleFrom(
                 primary: Colors.green,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
@@ -72,13 +75,50 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Text('App Sport'),
             ),
+             ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text('Fetch steps data'),
+                onTap: () async {
+                  FitbitActivityTimeseriesDataManager
+                      fitbitActivityTimeseriesDataManager =
+                      FitbitActivityTimeseriesDataManager(
+                    clientID: '238C6C',
+                    clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
+                    type: 'steps',
+                  );
+                  final stepsData = await fitbitActivityTimeseriesDataManager
+                      .fetch(FitbitActivityTimeseriesAPIURL.dateRangeWithResource(userID:'7ML2XV' ,
+                        startDate:DateTime.utc(2022, 05, 15), endDate: DateTime.utc(2022, 05, 28), resource: fitbitActivityTimeseriesDataManager.type)
+                        )as List<FitbitActivityTimeseriesData>;
+                        final  day1=stepsData[0];
+                        print(day1);
+                }
+                ),
+                ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text('Fetch calories data'),
+                onTap: () async{
+                  FitbitActivityTimeseriesDataManager
+                      fitbitActivityTimeseriesDataManager =
+                      FitbitActivityTimeseriesDataManager(
+                    clientID: '238C6C',
+                    clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
+                    type: 'calories',
+                  );
+                  final caloriesData = await fitbitActivityTimeseriesDataManager
+                      .fetch(FitbitActivityTimeseriesAPIURL.dateRangeWithResource(userID:'7ML2XV' ,
+                        startDate:DateTime.utc(2022, 05, 15), endDate: DateTime.utc(2022, 05, 28), resource: fitbitActivityTimeseriesDataManager.type)
+                        )as List<FitbitActivityTimeseriesData>;
+                        final  day1c=caloriesData[0];
+                        print(day1c);
+                }
+                ),
             ListTile(
                 leading: const Icon(Icons.logout),
                 title: const Text('Logout'),
                 onTap: () {
                   _toLoginPage(context);
                 }
-                //onTap: () => Navigator.pop(context) //_toLoginPage(context),
                 ),
           ],
         ),

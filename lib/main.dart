@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wearable_project/screens/BMI/BMIpage.dart';
 import 'package:wearable_project/screens/HomePage.dart';
 import 'package:wearable_project/screens/LoginPage.dart';
 import 'package:wearable_project/screens/PassiPage.dart';
 import 'package:wearable_project/screens/AttivityPage.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
         'HomePage': (context) => HomePage(),
         'PassiPage': (context) => PassiPage(),
         'AttivityPage': (context) => AttivityPage(),
+        'BMIPage':(context) => BMIpage(),
       },
     );
   } //build
