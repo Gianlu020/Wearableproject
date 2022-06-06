@@ -54,8 +54,8 @@ class PassiPage extends StatelessWidget {
                     userID: '7ML2XV',
                     resource: fitbitActivityTimeseriesDataManager.type,
                   )) as List<FitbitActivityTimeseriesData>;
-                  final day1 = stepsData[0];
-                  print(day1.value);
+                  final day1 = stepsData[0].value;
+                  print(day1);
                   //await Provider.of<DatabaseRepository>(context,
                   //      listen: false)
                   //   .insertTodo(Steps(null, day1.value));
@@ -65,10 +65,10 @@ class PassiPage extends StatelessWidget {
                       .build();
 
                   final stepsDao = database.stepsDao;
-                  final person = Steps(null, day1.value);
+                  final person = Steps(null, day1);
 
                   await stepsDao.insertSteps(person);
-                  final result = await double.tryParse(stepsDao.findAllSteps());
+                  final result = await stepsDao.findStepsById(1);
                   print(result);
                 },
                 child: const Text('Fetch Data'),

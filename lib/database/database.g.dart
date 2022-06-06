@@ -98,18 +98,20 @@ class _$AppDatabase extends AppDatabase {
 
 class _$StepsDao extends StepsDao {
   _$StepsDao(this.database, this.changeListener)
-      : _queryAdapter = QueryAdapter(database),
+      : _queryAdapter = QueryAdapter(database, changeListener),
         _stepsInsertionAdapter = InsertionAdapter(
             database,
             'Steps',
             (Steps item) =>
-                <String, Object?>{'id': item.id, 'value': item.value}),
+                <String, Object?>{'id': item.id, 'value': item.value},
+            changeListener),
         _stepsDeletionAdapter = DeletionAdapter(
             database,
             'Steps',
             ['id'],
             (Steps item) =>
-                <String, Object?>{'id': item.id, 'value': item.value});
+                <String, Object?>{'id': item.id, 'value': item.value},
+            changeListener);
 
   final sqflite.DatabaseExecutor database;
 
@@ -126,6 +128,16 @@ class _$StepsDao extends StepsDao {
     return _queryAdapter.queryList('SELECT * FROM Steps',
         mapper: (Map<String, Object?> row) =>
             Steps(row['id'] as int?, row['value'] as double?));
+  }
+
+  @override
+  Stream<Steps?> findStepsById(int id) {
+    return _queryAdapter.queryStream('SELECT * FROM Person WHERE id = ?1',
+        mapper: (Map<String, Object?> row) =>
+            Steps(row['id'] as int?, row['value'] as double?),
+        arguments: [id],
+        queryableName: 'Steps',
+        isView: false);
   }
 
   @override

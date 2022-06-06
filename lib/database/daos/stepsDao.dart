@@ -7,6 +7,9 @@ abstract class StepsDao {
   @Query('SELECT * FROM Steps')
   Future<List<Steps>> findAllSteps();
 
+  @Query('SELECT * FROM Person WHERE id = :id')
+  Stream<Steps?> findStepsById(int id);
+
   //Query #2: INSERT -> this allows to add a Todo in the table
   @insert
   Future<void> insertSteps(Steps steps);
