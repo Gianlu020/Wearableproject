@@ -27,12 +27,12 @@ class _LoginPageState extends State<LoginPage> {
     final sp = await SharedPreferences.getInstance();
     if(sp.getString('username') != null){
       //If 'username is set, push the HomePage
-     Navigator.pushNamed(context, 'HomePage', arguments: 'ciao@ciao.com');
+     Navigator.pushNamed(context, 'HomePage', arguments: 'App_sport');
     }//if
   }//_checkLogin
 
   Future<String> _loginUser(LoginData data) async {
-    if (data.name == 'ciao@ciao.com' && data.password == 'admin') {
+    if (data.name == 'App_sport@gmail.com' && data.password == 'admin') {
 
       final sp = await SharedPreferences.getInstance();
       sp.setString('username', data.name);
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
       onRecoverPassword: _recoverPassword,
       onSubmitAnimationCompleted: () {
         //Navigator.of(context).pushReplacementNamed(HomePage.route);
-        Navigator.pushNamed(context, 'HomePage', arguments: 'ciao@ciao.com');
+        Navigator.pushNamed(context, 'HomePage', arguments: 'App_sport');
       },
     );
   } } // LoginScreen

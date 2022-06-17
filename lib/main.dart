@@ -2,11 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:wearable_project/screens/BMI/BMIpage.dart';
 import 'package:wearable_project/screens/HomePage.dart';
 import 'package:wearable_project/screens/LoginPage.dart';
-import 'package:wearable_project/screens/PassiPage.dart';
+import 'package:wearable_project/screens/DayPage.dart';
 import 'package:wearable_project/screens/AttivityPage.dart';
+import 'package:wearable_project/screens/PrizePage.dart';
+import 'package:wearable_project/database/database.dart';
 
 
-void main() {
+Future<void> main() async {
+  //This is a special method that use WidgetFlutterBinding to interact with the Flutter engine.
+  //This is needed when you need to interact with the native core of the app.
+  //Here, we need it since when need to initialize the DB before running the app.
+  WidgetsFlutterBinding.ensureInitialized();
+
+  //This opens the database.
+  final AppDatabase database =
+      await $FloorAppDatabase.databaseBuilder('app_database.db').build();
   runApp(MyApp());
 } //main
 
@@ -20,9 +30,10 @@ class MyApp extends StatelessWidget {
       routes: {
         'LoginPage': (context) => LoginPage(),
         'HomePage': (context) => HomePage(),
-        'PassiPage': (context) => PassiPage(),
+        'DayPage': (context) => DayPage(),
         'AttivityPage': (context) => AttivityPage(),
         'BMIPage':(context) => BMIpage(),
+        'PrizePage':(context) => PrizePage(),
       },
     );
   } //build

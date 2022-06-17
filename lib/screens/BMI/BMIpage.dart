@@ -30,6 +30,7 @@ class _BMIpageState extends State<BMIpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.green,
           centerTitle: true,
           title: const Text("BMI Calculator"),
         ),
@@ -102,7 +103,7 @@ class _BMIpageState extends State<BMIpage> {
                             });
                           });
                         },
-                        activeColor: Colors.blue,
+                        activeColor: Colors.green,
                         buttonWidget: const Icon(
                           Icons.arrow_forward_ios_rounded,
                           color: Colors.black,

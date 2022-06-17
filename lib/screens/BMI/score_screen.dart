@@ -21,6 +21,7 @@ class ScoreScreen extends StatelessWidget {
     setBmiInterpretation();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green,
         centerTitle: true,
         title: const Text("BMI Score"),
       ),
@@ -80,7 +81,10 @@ class ScoreScreen extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: const Text("Re-calculate")),
+                            child: const Text("Re-calculate"),
+                            style: ElevatedButton.styleFrom(
+                primary: Colors.green,)
+                ),
                         const SizedBox(
                           width: 10,
                         ),

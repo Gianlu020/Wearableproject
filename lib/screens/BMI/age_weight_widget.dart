@@ -51,12 +51,12 @@ class _AgeWeightWidgetState extends State<AgeWeightWidget> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
+                child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
                       child: const CircleAvatar(
                         radius: 12,
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.green,
                         child: Icon(Icons.remove, color: Colors.white),
                       ),
                       onTap: () {
@@ -85,7 +85,7 @@ class _AgeWeightWidgetState extends State<AgeWeightWidget> {
                     InkWell(
                       child: const CircleAvatar(
                         radius: 12,
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.green,
                         child: Icon(Icons.add, color: Colors.white),
                       ),
                       onTap: () {
