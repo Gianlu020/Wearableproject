@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:wearable_project/database/entity/steps.dart';
 //import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -27,8 +29,13 @@ class _HomePageState extends State<HomePage> {
     final message = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text('App Sport'),
+        backgroundColor: Color.fromARGB(255, 18, 48, 124),
+        title: Text(
+          'App Sport',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -51,7 +58,7 @@ class _HomePageState extends State<HomePage> {
             },
             child: const Text('Select Day'),
             style: ElevatedButton.styleFrom(
-                primary: Colors.green,
+                primary: Color.fromARGB(255, 18, 48, 124),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           ),
           SizedBox(height: 50, width: 60),
@@ -61,7 +68,7 @@ class _HomePageState extends State<HomePage> {
             },
             child: const Text('BMI'),
             style: ElevatedButton.styleFrom(
-                primary: Colors.green,
+                primary: Color.fromARGB(255, 18, 48, 124),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           )
         ]),
@@ -72,18 +79,23 @@ class _HomePageState extends State<HomePage> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.green,
+                color: Color.fromARGB(255, 18, 48, 124),
               ),
-              child: Text(
-                'App Sport',
-                style: TextStyle(fontSize: 18),
+              child: Center(
+                child: Text(
+                  'APP SPORT',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
             ListTile(
                 leading: const Icon(Icons.add_moderator_rounded),
                 title: const Text('Authorize Fitbit'),
-                onTap: () async{
-                 String? userId = await FitbitConnector.authorize(
+                onTap: () async {
+                  String? userId = await FitbitConnector.authorize(
                       context: context,
                       clientID: '238C6C',
                       clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
@@ -152,23 +164,24 @@ class _HomePageState extends State<HomePage> {
                   final caloriesDao = database.caloriesDao;
 
                   //for (var i = 0; i < 14; i++) {
-                    //final calorie = Calories(i, caloriesData[i].value);
-                    //await caloriesDao.insertCalories(calorie);
+                  //final calorie = Calories(i, caloriesData[i].value);
+                  //await caloriesDao.insertCalories(calorie);
                   //}
 
                   final result = await caloriesDao.findCaloriesById(13);
                   print(result!.value);
                   //for (var i = 0; i < result.length; i++) {
-                    //print(result[i].value);
+                  //print(result[i].value);
                   //}
                 }),
-                ListTile(
+            ListTile(
                 leading: const Icon(Icons.remove_moderator_sharp),
                 title: const Text('Unauthorize Fitbit'),
-                onTap: ()async {
+                onTap: () async {
                   await FitbitConnector.unauthorize(
-                  clientID: '238C6C',
-                  clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',);
+                    clientID: '238C6C',
+                    clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
+                  );
                 }),
             ListTile(
                 leading: const Icon(Icons.logout),

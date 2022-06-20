@@ -7,7 +7,6 @@ import 'package:wearable_project/screens/BMI/gender_widget.dart';
 import 'package:wearable_project/screens/BMI/height_widget.dart';
 import 'package:wearable_project/screens/BMI/score_screen.dart';
 
-
 class BMIpage extends StatefulWidget {
   const BMIpage({Key? key}) : super(key: key);
 
@@ -30,7 +29,7 @@ class _BMIpageState extends State<BMIpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Color.fromARGB(255, 18, 48, 124),
           centerTitle: true,
           title: const Text("BMI Calculator"),
         ),
@@ -103,7 +102,7 @@ class _BMIpageState extends State<BMIpage> {
                             });
                           });
                         },
-                        activeColor: Colors.green,
+                        activeColor: Color.fromARGB(255, 18, 48, 124),
                         buttonWidget: const Icon(
                           Icons.arrow_forward_ios_rounded,
                           color: Colors.black,
