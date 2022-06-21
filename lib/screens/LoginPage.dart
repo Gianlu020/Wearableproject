@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
     final sp = await SharedPreferences.getInstance();
     if (sp.getString('username') != null) {
       //If 'username is set, push the HomePage
-      Navigator.pushNamed(context, 'HomePage', arguments: 'App_sport');
+      Navigator.pushNamed(context, 'HomePage', arguments: 'mario_rossi');
     } //if
   } //_checkLogin
 

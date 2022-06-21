@@ -39,14 +39,17 @@ class DayPage extends StatelessWidget {
               width: 500,
               height: 100,
             ),
-            AgeWeightWidget(
-                onChange: (numberVal) {
-                  _number = numberVal;
-                },
-                title: "Select the Day",
-                initValue: 1,
-                min: 1,
-                max: 14),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: AgeWeightWidget(
+                  onChange: (numberVal) {
+                    _number = numberVal;
+                  },
+                  title: "Select the Day",
+                  initValue: 1,
+                  min: 1,
+                  max: 14),
+            ),
             SizedBox(
               width: 50,
               height: 50,
@@ -68,8 +71,16 @@ class DayPage extends StatelessWidget {
 
                 Navigator.pushNamed(context, 'AttivityPage', arguments: res);
               },
-              child: const Text('Show Result'),
+              child: const Text(
+                'Show Result',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
               style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   primary: Color.fromARGB(255, 18, 48, 124),
                   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
             ),

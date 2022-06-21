@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 //import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -14,6 +18,7 @@ class AttivityPage extends StatelessWidget {
     final el1 = message![0];
     final el2 = message[1];
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('ACTIVITY'),
         backgroundColor: Color.fromARGB(255, 18, 48, 124),
@@ -23,28 +28,84 @@ class AttivityPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(60.0),
             child: Container(
               child: Column(children: [
-                Text('You got: '),
+                Text(
+                  'You got: ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 60,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: [
-                        Icon(Icons.directions_walk),
-                        Text(
-                          '$el2',
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 123, 120, 139),
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                      ],
+                        padding: EdgeInsets.all(16),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.directions_walk,
+                                size: 30,
+                              ),
+                              Text(
+                                '$el2',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
-                    Column(
-                      children: [
-                        Icon(Icons.local_fire_department),
-                        Text(
-                          '$el1',
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.pink[100],
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                      ],
+                        padding: EdgeInsets.all(16),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.local_fire_department,
+                                size: 30,
+                              ),
+                              Text(
+                                '$el1',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -72,8 +133,16 @@ class AttivityPage extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
               }
             },
-            child: const Text('Get the prize'),
+            child: const Text(
+              'Get the prize',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
             style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 primary: Color.fromARGB(255, 18, 48, 124),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           )

@@ -39,12 +39,13 @@ class _AgeWeightWidgetState extends State<AgeWeightWidget> {
     return Padding(
         padding: const EdgeInsets.all(8.0),
         child: Card(
+            color: Colors.amber,
             elevation: 12,
             shape: const RoundedRectangleBorder(),
             child: Column(children: [
               Text(
                 widget.title,
-                style: const TextStyle(fontSize: 20, color: Colors.grey),
+                style: const TextStyle(fontSize: 20, color: Colors.red),
               ),
               const SizedBox(
                 height: 10,
