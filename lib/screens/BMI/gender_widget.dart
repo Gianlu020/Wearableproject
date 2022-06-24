@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_3d_choice_chip/flutter_3d_choice_chip.dart';
 
-
 class GenderWidget extends StatefulWidget {
   final Function(int) onChange;
 
