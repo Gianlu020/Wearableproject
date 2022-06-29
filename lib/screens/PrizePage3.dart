@@ -57,7 +57,7 @@ class PrizePage3 extends StatelessWidget {
                           'WARMING UP',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -68,7 +68,7 @@ class PrizePage3 extends StatelessWidget {
                           'Crunch legs at the top and touch toes 3x30 \nFull Crunch 3x30 \nLateral plank on the elbows alternating 4x30sec \nPush-ups 3x20',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                         SizedBox(
@@ -78,7 +78,7 @@ class PrizePage3 extends StatelessWidget {
                           'TRAINING FORM',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -97,7 +97,7 @@ Rowing with barbell 3x8 + 1 strip.
 ''',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                         SizedBox(
@@ -107,7 +107,7 @@ Rowing with barbell 3x8 + 1 strip.
                           'COOL DOWN',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -118,7 +118,7 @@ Rowing with barbell 3x8 + 1 strip.
                           'Chest Stretching         1min \nTriceps Stretching      1min \nShoulders Circles       1min \nBiceps Stretching       1min',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                         SizedBox(
