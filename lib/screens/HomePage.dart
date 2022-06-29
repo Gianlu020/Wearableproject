@@ -205,11 +205,10 @@ class _HomePageState extends State<HomePage> {
                   //await caloriesDao.insertCalories(calorie);
                   //}
 
-                  final result = await caloriesDao.findCaloriesById(13);
-                  print(result!.value);
-                  //for (var i = 0; i < result.length; i++) {
-                  //print(result[i].value);
-                  //}
+                 final result = await caloriesDao.findAllCalories();
+                  for (var i = 0; i < result.length; i++) {
+                    print(result[i].value);
+                  } //for
                 }),
             ListTile(
                 leading: const Icon(Icons.logout),
