@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:wearable_project/main.dart';
 
@@ -10,9 +12,9 @@ class PrizePage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[600],
-        elevation: 10,
+        backgroundColor: Color.fromARGB(255, 166, 24, 24),
         centerTitle: true,
+        elevation: 10,
         title: Text('BASIC LEVEL TRAINING'),
       ),
       body: Container(
@@ -63,9 +65,10 @@ class PrizePage1 extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          'Double Crunch        3x20 \nInverse Cruch on fitball        3x20 \nPlank on elbows        3x30sec \nBench Press at Multipower        3x15',
+                          'Double Crunch                                  3x20 \nInverse Cruch on fitball                   3x20 \nPlank on elbows                               3x30sec \nBench Press at Multipower            3x15',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(
@@ -83,9 +86,10 @@ class PrizePage1 extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          'Bench Press at Multipower        3x15 \nPectoral Machine        3x12 \nIncline Bench        3x12 \nWide Lat Machine        3x12 \nDumbell Curls        3x12',
+                          'Bench Press at Multipower        3x15 \nPectoral Machine                         3x12 \nIncline Bench                                3x12 \nWide Lat Machine                        3x12 \nDumbell Curls            3x12',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(
@@ -103,9 +107,10 @@ class PrizePage1 extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          'Chest Stretching        1min \nTriceps Stretching      1min \nShoulders Circles         1min',
+                          'Chest Stretching                         1min \nTriceps Stretching                      1min \nShoulders Circles                       1min',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(

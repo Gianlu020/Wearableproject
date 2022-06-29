@@ -12,9 +12,9 @@ class PrizePage3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[600],
-        elevation: 10,
+        backgroundColor: Color.fromARGB(255, 166, 24, 24),
         centerTitle: true,
+        elevation: 10,
         title: Text('EXPERT LEVEL TRAINING '),
       ),
       body: Container(
@@ -68,6 +68,7 @@ class PrizePage3 extends StatelessWidget {
                           'Crunch legs at the top and touch toes 3x30 \nFull Crunch 3x30 \nLateral plank on the elbows alternating 4x30sec \nPush-ups 3x20',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(
@@ -85,7 +86,7 @@ class PrizePage3 extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          '''Free flat bench with dumbbells 3x8 + 1 strip. \nBench opening at 30 ° 3x10 + 1 strip.
+                          '''Free flat bench with dumbbells 3x8 + 1 strip. \nBench opening at 30° 3x10 + 1 strip.
 Free inclined bench 3x8-8-6 + 1 strip.
 Free flat bench 2x25
 Traction with overload 3x exhaustion
@@ -96,6 +97,7 @@ Rowing with barbell 3x8 + 1 strip.
 ''',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(
@@ -113,9 +115,10 @@ Rowing with barbell 3x8 + 1 strip.
                           height: 10,
                         ),
                         Text(
-                          'Chest Stretching        1min \nTriceps Stretching      1min \nShoulders Circles       1min \nBiceps Stretching   1min',
+                          'Chest Stretching         1min \nTriceps Stretching      1min \nShoulders Circles       1min \nBiceps Stretching       1min',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(

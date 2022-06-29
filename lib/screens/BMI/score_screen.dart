@@ -21,21 +21,28 @@ class ScoreScreen extends StatelessWidget {
     setBmiInterpretation();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 18, 48, 124),
+        backgroundColor: Color.fromARGB(255, 166, 24, 24),
         centerTitle: true,
         title: const Text("BMI Score"),
       ),
       body: Container(
+          color: Color.fromARGB(255, 0, 74, 173),
           padding: const EdgeInsets.all(12),
           child: Card(
+              color: Color.fromARGB(255, 217, 214, 214),
               elevation: 12,
-              shape: const RoundedRectangleBorder(),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
                       "Your Score",
-                      style: TextStyle(fontSize: 30, color: Colors.blue),
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 0, 74, 173)),
                     ),
                     const SizedBox(
                       height: 10,
@@ -62,17 +69,20 @@ class ScoreScreen extends StatelessWidget {
                     ),
                     Text(
                       bmiStatus!,
-                      style: TextStyle(fontSize: 20, color: bmiStatusColor!),
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: bmiStatusColor!),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
                       bmiInterpretation!,
-                      style: const TextStyle(fontSize: 15),
+                      style: const TextStyle(fontSize: 20),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 60,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -81,9 +91,19 @@ class ScoreScreen extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: const Text("Re-calculate"),
+                            child: const Text(
+                              "Re-calculate",
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 18, 48, 124),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              primary: Color.fromARGB(255, 0, 74, 173),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 50, vertical: 20),
                             )),
                         const SizedBox(
                           width: 10,

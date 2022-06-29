@@ -13,9 +13,9 @@ class PrizePage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[600],
-        elevation: 10,
+        backgroundColor: Color.fromARGB(255, 166, 24, 24),
         centerTitle: true,
+        elevation: 10,
         title: Text('INTERMEDIATE LEVEL TRAINING'),
       ),
       body: Container(
@@ -69,6 +69,7 @@ class PrizePage2 extends StatelessWidget {
                           'Crunch legs at the top and touch toes 3x25 \nBooklet crunch  3x25 \nElbow plank with single leg 4x30sec \nFree flat bench 3x15',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(
@@ -90,6 +91,7 @@ class PrizePage2 extends StatelessWidget {
 Narrow bench 3x8, rest 10 \nUpper back machine 3x10 \nRowing with barbell 3x8, rest 10 \nDip between two benches 3x30sec''',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(
@@ -107,9 +109,10 @@ Narrow bench 3x8, rest 10 \nUpper back machine 3x10 \nRowing with barbell 3x8, r
                           height: 10,
                         ),
                         Text(
-                          'Chest Stretching        1min \nTriceps Stretching      1min \nShoulders Circles         1min',
+                          'Chest Stretching        1min \nTriceps Stretching     1min \nShoulders Circles      1min',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                         SizedBox(

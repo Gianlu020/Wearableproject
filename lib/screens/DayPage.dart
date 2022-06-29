@@ -17,74 +17,96 @@ class DayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     print('${DayPage.routename} built');
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 166, 166, 166),
       appBar: AppBar(
-        title: const Text('Select Day'),
-        backgroundColor: Color.fromARGB(255, 18, 48, 124),
+        centerTitle: true,
+        title: const Text('Day Selection'),
+        backgroundColor: Color.fromARGB(255, 166, 24, 24),
       ),
       body: Center(
-          child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 50,
-              height: 50,
-            ),
-            SizedBox(
-              child: Text(
-                'Select a day from 15/05/2022 to 28/05/2022',
-                style: TextStyle(fontSize: 18),
-              ),
-              width: 500,
-              height: 100,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: AgeWeightWidget(
-                  onChange: (numberVal) {
-                    _number = numberVal;
-                  },
-                  title: "Select the Day",
-                  initValue: 1,
-                  min: 1,
-                  max: 14),
-            ),
-            SizedBox(
-              width: 50,
-              height: 50,
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                final database = await $FloorAppDatabase
-                    .databaseBuilder('app_database.db')
-                    .build();
+          child: Container(
+        padding: const EdgeInsets.all(12),
+        color: Color.fromARGB(255, 0, 74, 173),
+        child: Card(
+          color: Color.fromARGB(255, 217, 214, 214),
+          elevation: 12,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              //SizedBox(
+              //width: 50,
+              //height: 50,
+              //),
+              SizedBox(
+                child: Column(
+                  children: [
+                    Text(
+                      'Select a day \n \n from 15/05/2022 to 28/05/2022\n',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 0, 74, 173),
+                        fontSize: 20,
+                      ),
+                    ),
 
-                final caloriesDao = database.caloriesDao;
-                _number = _number - 1;
-                final result = await caloriesDao.findCaloriesById(_number);
-
-                final stepsDao = database.stepsDao;
-                final risultato = await stepsDao.findStepsById(_number);
-
-                final res = [result!.value, risultato!.value];
-
-                Navigator.pushNamed(context, 'AttivityPage', arguments: res);
-              },
-              child: const Text(
-                'Show Result',
-                style: TextStyle(
-                  fontSize: 18,
+                    // width: 500,
+                    //height: 100,
+                    //),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: AgeWeightWidget(
+                          onChange: (numberVal) {
+                            _number = numberVal;
+                          },
+                          title: "Select the Day",
+                          initValue: 1,
+                          min: 1,
+                          max: 14),
+                    ),
+                  ],
                 ),
               ),
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+              //SizedBox(
+              //width: 50,
+              //height: 50,
+              //),
+              ElevatedButton(
+                onPressed: () async {
+                  final database = await $FloorAppDatabase
+                      .databaseBuilder('app_database.db')
+                      .build();
+
+                  final caloriesDao = database.caloriesDao;
+                  _number = _number - 1;
+                  final result = await caloriesDao.findCaloriesById(_number);
+
+                  final stepsDao = database.stepsDao;
+                  final risultato = await stepsDao.findStepsById(_number);
+
+                  final res = [result!.value, risultato!.value];
+
+                  Navigator.pushNamed(context, 'AttivityPage', arguments: res);
+                },
+                child: const Text(
+                  'Show Result',
+                  style: TextStyle(
+                    fontSize: 18,
                   ),
-                  primary: Color.fromARGB(255, 18, 48, 124),
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
-            ),
-          ],
+                ),
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    primary: Color.fromARGB(255, 0, 74, 173),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
+              ),
+            ],
+          ),
         ),
       )),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wearable_project/screens/HomePage.dart';
+//import 'package:wearable_project/screens/HomePage.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fitbitter/fitbitter.dart';
@@ -63,7 +63,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: 'login_flow',
-      theme: LoginTheme(primaryColor: Color.fromARGB(255, 117, 76, 175)),
+      theme: LoginTheme(
+        primaryColor: const Color.fromARGB(255, 0, 74, 173),
+        //  buttonTheme: ButtonStyle(backgroundColo),
+      ),
       onLogin: _loginUser,
       onSignup: _signUpUser,
       onRecoverPassword: _recoverPassword,

@@ -17,13 +17,15 @@ class _HeightWidgetState extends State<HeightWidget> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
+          color: Colors.white,
           elevation: 12,
-          shape: const RoundedRectangleBorder(),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Column(
             children: [
               const Text(
                 "Height",
-                style: TextStyle(fontSize: 25, color: Colors.grey),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
               const SizedBox(
                 height: 10,
@@ -40,7 +42,7 @@ class _HeightWidgetState extends State<HeightWidget> {
                   ),
                   const Text(
                     "cm",
-                    style: TextStyle(fontSize: 20, color: Colors.grey),
+                    style: TextStyle(fontSize: 20, color: Colors.black),
                   )
                 ],
               ),
@@ -48,7 +50,7 @@ class _HeightWidgetState extends State<HeightWidget> {
                 min: 0,
                 max: 240,
                 value: _height.toDouble(),
-                activeColor: Color.fromARGB(255, 18, 48, 124),
+                activeColor: Color.fromARGB(255, 0, 74, 173),
                 thumbColor: Colors.red,
                 onChanged: (value) {
                   setState(() {

@@ -29,17 +29,22 @@ class _BMIpageState extends State<BMIpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 18, 48, 124),
+          backgroundColor: Color.fromARGB(255, 166, 24, 24),
           centerTitle: true,
           title: const Text("BMI Calculator"),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: Container(
+            color: Color.fromARGB(255, 0, 74, 173),
             padding: const EdgeInsets.all(12),
             child: Card(
+              color: Color.fromARGB(255, 217, 214, 214),
               elevation: 12,
-              shape: const RoundedRectangleBorder(),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //Lets create widget for gender selection
                   GenderWidget(
@@ -102,7 +107,7 @@ class _BMIpageState extends State<BMIpage> {
                             });
                           });
                         },
-                        activeColor: Color.fromARGB(255, 18, 48, 124),
+                        activeColor: Color.fromARGB(255, 0, 74, 173),
                         buttonWidget: const Icon(
                           Icons.arrow_forward_ios_rounded,
                           color: Colors.black,

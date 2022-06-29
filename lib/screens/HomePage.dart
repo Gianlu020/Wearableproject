@@ -28,28 +28,30 @@ class _HomePageState extends State<HomePage> {
     print('${HomePage.routename} built');
     final message = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 206, 204, 204),
+      backgroundColor: Color.fromARGB(255, 166, 166, 166),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 18, 48, 124),
+        backgroundColor: Color.fromARGB(255, 166, 24, 24),
+        centerTitle: true,
         title: Text(
-          'App Sport',
+          'Workout For You',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
       ),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               child: Text(
                 'Hello $message',
                 style: TextStyle(
-                  fontSize: 20,
-                  //fontStyle: FontStyle.italic,
+                  fontSize: 30,
+                  fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 157, 99, 129),
+                  color: Color.fromARGB(255, 0, 74, 173),
                 ),
               ),
             ),
@@ -58,15 +60,18 @@ class _HomePageState extends State<HomePage> {
             height: 300,
             width: 300,
             child: Image.asset(
-              'assets/images/corsa.jpg',
+              'assets/images/index.jpg',
             ),
+          ),
+          SizedBox(
+            height: 30,
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, 'DayPage');
             },
             child: const Text(
-              'Select Day',
+              'Day Selection',
               style: TextStyle(
                 fontSize: 18,
               ),
@@ -75,10 +80,10 @@ class _HomePageState extends State<HomePage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                primary: Color.fromARGB(255, 157, 99, 129),
+                primary: Color.fromARGB(255, 0, 74, 173),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           ),
-          SizedBox(height: 50, width: 60),
+          //  SizedBox(height: 50, width: 60),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, 'BMIPage');
@@ -93,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                primary: Color.fromARGB(255, 157, 99, 129),
+                primary: Color.fromARGB(255, 0, 74, 173),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           )
         ]),
@@ -104,11 +109,11 @@ class _HomePageState extends State<HomePage> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 18, 48, 124),
+                color: Color.fromARGB(255, 0, 74, 173),
               ),
               child: Center(
                 child: Text(
-                  'APP SPORT',
+                  '- W4U -',
                   style: TextStyle(
                     fontSize: 25,
                     color: Colors.white,
@@ -126,6 +131,15 @@ class _HomePageState extends State<HomePage> {
                       clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
                       redirectUri: 'example://fitbit/auth',
                       callbackUrlScheme: 'example');
+                }),
+            ListTile(
+                leading: const Icon(Icons.remove_moderator_sharp),
+                title: const Text('Unauthorize Fitbit'),
+                onTap: () async {
+                  await FitbitConnector.unauthorize(
+                    clientID: '238C6C',
+                    clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
+                  );
                 }),
             ListTile(
                 leading: const Icon(Icons.settings),
@@ -198,15 +212,6 @@ class _HomePageState extends State<HomePage> {
                   //for (var i = 0; i < result.length; i++) {
                   //print(result[i].value);
                   //}
-                }),
-            ListTile(
-                leading: const Icon(Icons.remove_moderator_sharp),
-                title: const Text('Unauthorize Fitbit'),
-                onTap: () async {
-                  await FitbitConnector.unauthorize(
-                    clientID: '238C6C',
-                    clientSecret: 'd1e8a025414a71fcec5d0b2d306aac9c',
-                  );
                 }),
             ListTile(
                 leading: const Icon(Icons.logout),

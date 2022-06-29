@@ -41,7 +41,9 @@ class _AgeWeightWidgetState extends State<AgeWeightWidget> {
         child: Card(
             color: Colors.white,
             elevation: 12,
-            shape: const RoundedRectangleBorder(),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Column(children: [
               Text(
                 widget.title,
