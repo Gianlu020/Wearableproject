@@ -83,7 +83,6 @@ class _HomePageState extends State<HomePage> {
                 primary: Color.fromARGB(255, 0, 74, 173),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
           ),
-          //  SizedBox(height: 50, width: 60),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, 'BMIPage');

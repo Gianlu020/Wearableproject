@@ -3,7 +3,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-//import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class AttivityPage extends StatelessWidget {
   AttivityPage({Key? key}) : super(key: key);
@@ -18,7 +17,6 @@ class AttivityPage extends StatelessWidget {
     final el1 = message![0]; //calories
     final el2 = message[1]; //steps
     return Scaffold(
-      //backgroundColor: Color.fromARGB(255, 166, 166, 166),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Summary of the Day'),

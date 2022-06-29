@@ -36,10 +36,6 @@ class DayPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              //SizedBox(
-              //width: 50,
-              //height: 50,
-              //),
               SizedBox(
                 child: Column(
                   children: [
@@ -52,10 +48,6 @@ class DayPage extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-
-                    // width: 500,
-                    //height: 100,
-                    //),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: AgeWeightWidget(
@@ -70,10 +62,6 @@ class DayPage extends StatelessWidget {
                   ],
                 ),
               ),
-              //SizedBox(
-              //width: 50,
-              //height: 50,
-              //),
               ElevatedButton(
                 onPressed: () async {
                   final database = await $FloorAppDatabase

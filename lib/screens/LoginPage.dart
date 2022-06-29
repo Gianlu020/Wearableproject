@@ -65,7 +65,6 @@ class _LoginPageState extends State<LoginPage> {
       title: 'login_flow',
       theme: LoginTheme(
         primaryColor: const Color.fromARGB(255, 0, 74, 173),
-        //  buttonTheme: ButtonStyle(backgroundColo),
       ),
       onLogin: _loginUser,
       onSignup: _signUpUser,
