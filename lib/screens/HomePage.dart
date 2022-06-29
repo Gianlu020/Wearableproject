@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 0, 74, 173),
+                color: Color.fromARGB(255, 166, 24, 24),
               ),
               child: Center(
                 child: Text(
