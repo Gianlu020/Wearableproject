@@ -15,7 +15,6 @@ class DayPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('${DayPage.routename} built');
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 166, 166, 166),
       appBar: AppBar(

@@ -12,7 +12,6 @@ class AttivityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('${AttivityPage.routename} built');
     final message = ModalRoute.of(context)!.settings.arguments as List?;
     final el1 = message![0]; //calories
     final el2 = message[1]; //steps

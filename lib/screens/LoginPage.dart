@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'login_flow',
+      title: 'W4U Login',
       theme: LoginTheme(
         primaryColor: const Color.fromARGB(255, 0, 74, 173),
       ),

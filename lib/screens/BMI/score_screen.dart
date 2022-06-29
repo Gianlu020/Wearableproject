@@ -62,7 +62,7 @@ class ScoreScreen extends StatelessWidget {
                         style: const TextStyle(fontSize: 40),
                       ),
                       currentValue: bmiScore.toDouble(),
-                      needleColor: Colors.blue,
+                      needleColor: const Color.fromARGB(255, 0, 74, 173),
                     ),
                     const SizedBox(
                       height: 10,

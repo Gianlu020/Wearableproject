@@ -25,7 +25,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    print('${HomePage.routename} built');
     final message = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 166, 166, 166),
